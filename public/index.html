@@ -3,11 +3,29 @@
 <head>
   <title>Express</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="javascripts/jquery.min.js"></script>
 </head>
 
 <body>
   <h1>Express</h1>
   <p>Welcome to Express</p>
+  <textarea id="firstcica"></textarea>
+  <textarea id="secondcica"></textarea>
+  <button id="cica">Cicaaaaa!</button>
+  <textarea id="resultcica"></textarea>
 </body>
 
 </html>
+<script>
+  $("#cica").click(function(){
+    $.post("/cica",
+      {
+        firstcica: $('#firstcica').value,
+        secondcica: $('#secondcica').value
+      },
+      function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+      });
+  });
+
+</script>

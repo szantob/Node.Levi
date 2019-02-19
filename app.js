@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var cicaRouter = require('./routes/cica');
 
 var app = express();
 
@@ -17,6 +17,6 @@ app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/cica', cicaRouter);
 
 module.exports = app;
